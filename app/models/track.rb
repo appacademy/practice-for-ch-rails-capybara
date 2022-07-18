@@ -12,7 +12,7 @@
 #  updated_at :datetime         not null
 #
 class Track < ApplicationRecord
-  validates :lyrics, :title, :ord, presence: true
+  validates :title, :ord, presence: true
   # can't use presence validation with boolean field
   validates :bonus, inclusion: { in: [true, false] }
   validates :ord, uniqueness: { scope: :album_id }

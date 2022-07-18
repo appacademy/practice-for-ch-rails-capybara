@@ -20,8 +20,7 @@ class Album < ApplicationRecord
   after_initialize :set_defaults
 
   belongs_to :band
-  has_many :tracks, 
-    dependent: :destroy
+  has_many :tracks, dependent: :destroy
 
   def set_defaults
     self.live ||= false

@@ -28,7 +28,7 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
   after_initialize :set_activation_token, :set_defaults
 
-  has_many :notes, foreign_key: :author_id
+  has_many :notes, foreign_key: :author_id, dependent: :destroy, inverse_of: :author
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
