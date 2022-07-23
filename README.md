@@ -62,14 +62,14 @@ your `UsersController`. The first spec has been filled in for you.
 ```ruby
 RSpec.describe "Users", type: :request do
 
-  describe "GET /users/new" do
+  describe "GET /users/new (#new)" do
     it "renders the new template" do
       get new_user_url
       expect(response.body).to include("Sign Up!")
     end
   end
 
-  describe "POST /users" do
+  describe "POST /users (#create)" do
     context "with invalid params" do
       it "validates the presence of the user's email" do
         # Your code here
